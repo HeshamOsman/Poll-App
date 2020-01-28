@@ -1,16 +1,26 @@
-import React from 'react';
-// import Questions from '../questions/Questions'
+import React,{Component} from 'react';
+import Questions from '../questions/Questions'
+import QuestionAdding from '../questions/Questions/QuestionAdding'
 import './App.css';
-// import Config from 'Config';
 
+class App extends Component{
 
-function App() {
+  state = {
+    questions: []
+  }
 
-  return (
-   <React.Fragment>
-      <h1>{process.env.REACT_APP_SERVER_URL}</h1>
-   </React.Fragment>
-  );
+  addQuestion = question => {
+
+  }
+
+  render(){
+    return (
+      <React.Fragment>
+        <QuestionAdding addQuestion={this.addQuestion}/>
+        <Questions questions={this.state.questions}/>
+      </React.Fragment>
+     );
+  }
 }
 
 export default App;
